@@ -65,7 +65,7 @@ class Server:
             self.broadcast(player)
 
     def broadcast(self, player):
-        if len(self.clientMessages) == 1:
+        if len(self.players) == 1:
             mess = ServerMessage(hp=self.clientMessages[0].hp)
             print(mess.marshal())
             player.sendall(mess.marshal())
